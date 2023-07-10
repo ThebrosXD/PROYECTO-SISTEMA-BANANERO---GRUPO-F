@@ -83,6 +83,26 @@ namespace Maint.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap carrito_de_compras {
+            get {
+                object obj = ResourceManager.GetObject("carrito-de-compras", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap carrito_de_compras__1_ {
+            get {
+                object obj = ResourceManager.GetObject("carrito-de-compras (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Fondo_Login {
             get {
                 object obj = ResourceManager.GetObject("Fondo Login", resourceCulture);
