@@ -113,7 +113,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button4.Image = global::Maint.Properties.Resources.aplicaciones1;
+            this.button4.Image = global::Maint.Properties.Resources.reporte;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.Location = new System.Drawing.Point(0, 292);
             this.button4.Name = "button4";
@@ -133,7 +133,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button3.Image = global::Maint.Properties.Resources.aplicaciones1;
+            this.button3.Image = global::Maint.Properties.Resources.usuario;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.Location = new System.Drawing.Point(0, 382);
             this.button3.Name = "button3";
@@ -153,7 +153,7 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button5.Image = global::Maint.Properties.Resources.aplicaciones1;
+            this.button5.Image = global::Maint.Properties.Resources.registro;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.Location = new System.Drawing.Point(0, 337);
             this.button5.Name = "button5";
@@ -194,7 +194,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button1.Image = global::Maint.Properties.Resources.aplicaciones1;
+            this.button1.Image = global::Maint.Properties.Resources.listas_de_control;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(0, 202);
             this.button1.Name = "button1";
