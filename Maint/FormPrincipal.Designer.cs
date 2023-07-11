@@ -30,16 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.pnMenuPrincipal = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
-            this.pnTitulo = new System.Windows.Forms.Panel();
-            this.pnContenedor = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.pnTitulo = new System.Windows.Forms.Panel();
+            this.pnContenedor = new System.Windows.Forms.Panel();
             this.pnMenuPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -60,41 +60,6 @@
             this.pnMenuPrincipal.Name = "pnMenuPrincipal";
             this.pnMenuPrincipal.Size = new System.Drawing.Size(195, 533);
             this.pnMenuPrincipal.TabIndex = 5;
-            // 
-            // button6
-            // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button6.BackColor = System.Drawing.Color.Aquamarine;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(46, 494);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(105, 39);
-            this.button6.TabIndex = 8;
-            this.button6.Text = "Cerrar sesión";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // pnTitulo
-            // 
-            this.pnTitulo.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pnTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnTitulo.Location = new System.Drawing.Point(195, 0);
-            this.pnTitulo.Name = "pnTitulo";
-            this.pnTitulo.Size = new System.Drawing.Size(769, 82);
-            this.pnTitulo.TabIndex = 6;
-            // 
-            // pnContenedor
-            // 
-            this.pnContenedor.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pnContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnContenedor.Location = new System.Drawing.Point(195, 82);
-            this.pnContenedor.Name = "pnContenedor";
-            this.pnContenedor.Size = new System.Drawing.Size(769, 451);
-            this.pnContenedor.TabIndex = 7;
             // 
             // pictureBox1
             // 
@@ -124,6 +89,23 @@
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button6
+            // 
+            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button6.BackColor = System.Drawing.Color.Aquamarine;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.Location = new System.Drawing.Point(46, 494);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(105, 39);
+            this.button6.TabIndex = 8;
+            this.button6.Text = "Cerrar sesión";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button3
             // 
@@ -226,12 +208,30 @@
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button2.UseVisualStyleBackColor = false;
             // 
+            // pnTitulo
+            // 
+            this.pnTitulo.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnTitulo.Location = new System.Drawing.Point(195, 0);
+            this.pnTitulo.Name = "pnTitulo";
+            this.pnTitulo.Size = new System.Drawing.Size(800, 82);
+            this.pnTitulo.TabIndex = 6;
+            // 
+            // pnContenedor
+            // 
+            this.pnContenedor.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnContenedor.Location = new System.Drawing.Point(195, 82);
+            this.pnContenedor.Name = "pnContenedor";
+            this.pnContenedor.Size = new System.Drawing.Size(800, 451);
+            this.pnContenedor.TabIndex = 7;
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(964, 533);
+            this.ClientSize = new System.Drawing.Size(995, 533);
             this.Controls.Add(this.pnContenedor);
             this.Controls.Add(this.pnTitulo);
             this.Controls.Add(this.pnMenuPrincipal);
