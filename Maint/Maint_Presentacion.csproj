@@ -82,6 +82,12 @@
     <Compile Include="Seguridad\FormCreacionCuenta.Designer.cs">
       <DependentUpon>FormCreacionCuenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventas\FormSeguimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\FormSeguimiento.Designer.cs">
+      <DependentUpon>FormSeguimiento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventas\FormVentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,9 @@
     <EmbeddedResource Include="Seguridad\FormCreacionCuenta.resx">
       <DependentUpon>FormCreacionCuenta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\FormSeguimiento.resx">
+      <DependentUpon>FormSeguimiento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ventas\FormVentas.resx">
       <DependentUpon>FormVentas.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,6 +135,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Capa_Datos\Capa_Datos.csproj">
+      <Project>{c01bb785-d45f-49a1-b934-0cc7d57e236f}</Project>
+      <Name>Capa_Datos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Capa_Entidad\Capa_Entidad.csproj">
       <Project>{51cddbc8-f697-46c8-bd48-7a0f4b62acaf}</Project>
       <Name>Capa_Entidad</Name>

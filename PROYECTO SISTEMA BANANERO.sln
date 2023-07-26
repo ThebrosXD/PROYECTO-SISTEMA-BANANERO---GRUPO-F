@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maint", "Maint\Maint.csproj", "{1CAE22FF-E39F-4C8C-B31F-02CD55F577B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maint_Presentacion", "Maint\Maint_Presentacion.csproj", "{1CAE22FF-E39F-4C8C-B31F-02CD55F577B2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Capa_Entidad", "Capa_Entidad\Capa_Entidad.csproj", "{51CDDBC8-F697-46C8-BD48-7A0F4B62ACAF}"
 EndProject

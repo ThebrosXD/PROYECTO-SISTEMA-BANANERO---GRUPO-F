@@ -29,7 +29,7 @@ namespace Maint
         {
             cn.Open();
             this.Hide();
-            SqlCommand cmd = new SqlCommand("SELECT cedula, contrasena FROM clientesB WHERE cedula=@cedula AND contrasena=@contrasena", cn);
+            SqlCommand cmd = new SqlCommand("SELECT cedula, contrasena FROM B_usuario WHERE cedula=@cedula AND contrasena=@contrasena", cn);
             cmd.Parameters.AddWithValue("@cedula", txtUsuario.Text);
             cmd.Parameters.AddWithValue("@contrasena", txtContrasena.Text);
 

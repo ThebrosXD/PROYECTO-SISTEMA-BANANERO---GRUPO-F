@@ -263,6 +263,7 @@ namespace Maint
             this.button5.TabIndex = 28;
             this.button5.Text = "Seguimiento";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
             // 
             // label11
             // 
@@ -343,6 +344,7 @@ namespace Maint
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormVentas";
             this.Text = " ";
+            this.Load += new System.EventHandler(this.FormVentas_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Maint.Ventas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,8 +19,9 @@ namespace Maint
             InitializeComponent();
         }
 
-        //Abre un form hijo al form principal
-        private void abriFormPanel(object Formhijo)
+
+        //Abre un form hijo en un panel del form principal
+        public void abriFormPanel(object Formhijo)
         {
             if (this.pnContenedor.Controls.Count > 0)
                 this.pnContenedor.Controls.RemoveAt(0);
@@ -43,5 +45,15 @@ namespace Maint
             lgn.Show();
         }
 
+        public void abrirFormSeguimiento()
+        {
+            FormSeguimiento se = new FormSeguimiento();
+            se.TopLevel = false;
+            se.FormBorderStyle = FormBorderStyle.None;
+            se.Dock = DockStyle.Fill;
+            pnContenedor.Controls.Clear();
+            pnContenedor.Controls.Add(se);
+            se.Show();
+        }
     }
 }
