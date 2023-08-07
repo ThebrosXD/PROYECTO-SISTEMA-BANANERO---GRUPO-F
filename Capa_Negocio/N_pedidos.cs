@@ -18,5 +18,24 @@ namespace Capa_Negocio
             return datosD.Listado_pe();
         }
 
+        public String Mantenimiento_pedido(String accion, E_pedidos oPE)
+        {
+            return datosD.Mantenimiento_pedido(accion, oPE);
+        }
+
+        public DataTable CargarProductosCMB()
+        {
+            return datosD.CargarProductosCMB();
+        }
+
+        public DataTable CargarMPagoCMB()
+        {
+            return datosD.CargarMPagoCMB();
+        }
+
+        public DataTable CargarUsuario()
+        {
+            return datosD.CargarUsuario();
+        }
     }
 }

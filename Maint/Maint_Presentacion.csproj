@@ -88,11 +88,11 @@
     <Compile Include="Ventas\FormSeguimiento.Designer.cs">
       <DependentUpon>FormSeguimiento.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventas\FormVentas.cs">
+    <Compile Include="Ventas\FormPedido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventas\FormVentas.Designer.cs">
-      <DependentUpon>FormVentas.cs</DependentUpon>
+    <Compile Include="Ventas\FormPedido.Designer.cs">
+      <DependentUpon>FormPedido.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -118,8 +118,8 @@
     <EmbeddedResource Include="Ventas\FormSeguimiento.resx">
       <DependentUpon>FormSeguimiento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventas\FormVentas.resx">
-      <DependentUpon>FormVentas.cs</DependentUpon>
+    <EmbeddedResource Include="Ventas\FormPedido.resx">
+      <DependentUpon>FormPedido.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

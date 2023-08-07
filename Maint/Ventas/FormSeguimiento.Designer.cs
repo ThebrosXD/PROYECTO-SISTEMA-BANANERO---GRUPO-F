@@ -75,6 +75,7 @@
             this.btnRegistrarPedido.TabIndex = 31;
             this.btnRegistrarPedido.Text = "Registrar pedido";
             this.btnRegistrarPedido.UseVisualStyleBackColor = false;
+            this.btnRegistrarPedido.Click += new System.EventHandler(this.btnRegistrarPedido_Click);
             // 
             // txtBuscar
             // 

@@ -35,7 +35,7 @@ namespace Maint
 
         private void button4_Click(object sender, EventArgs e)
         {
-            abriFormPanel(new FormVentas());
+            abriFormPanel(new FormPedido());
         }
 
         private void button6_Click(object sender, EventArgs e)

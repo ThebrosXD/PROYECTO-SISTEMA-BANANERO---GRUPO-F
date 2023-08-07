@@ -28,8 +28,8 @@ namespace Maint.Ventas
             dgvPrincipal.Columns[0].HeaderText = "ID";
             dgvPrincipal.Columns[1].Width = 100;
             dgvPrincipal.Columns[1].HeaderText = "Identificacion";
-            dgvPrincipal.Columns[2].Width = 100;
-            dgvPrincipal.Columns[2].HeaderText = "Producto";
+            dgvPrincipal.Columns[2].Width = 50;
+            dgvPrincipal.Columns[2].HeaderText = "ID_PRODUCTO";
             dgvPrincipal.Columns[3].Width = 100;
             dgvPrincipal.Columns[3].HeaderText = "Pago";
             dgvPrincipal.Columns[4].Width = 100;
@@ -48,6 +48,18 @@ namespace Maint.Ventas
         {
             dgvPrincipal.DataSource = EN.Listado_pe();
             this.Formato_pe();
+        }
+
+        private void btnRegistrarPedido_Click(object sender, EventArgs e)
+        {
+            FormPedido FP = new FormPedido();
+
+            // Llamar al método abriFormPanel de FormPrincipal para abrir FormSeguimiento dentro del panel
+            FormPrincipal pe = this.ParentForm as FormPrincipal;
+            if (pe != null)
+            {
+                pe.abriFormPanel(FP);
+            }
         }
     }
 }
