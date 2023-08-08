@@ -122,6 +122,8 @@ namespace Maint
             this.txtPedido.ReadOnly = true;
             this.txtPedido.Size = new System.Drawing.Size(100, 20);
             this.txtPedido.TabIndex = 7;
+            this.txtPedido.Text = "*****************";
+            this.txtPedido.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtTelefono
             // 
@@ -158,7 +160,7 @@ namespace Maint
             this.txtCajas.Location = new System.Drawing.Point(110, 61);
             this.txtCajas.Name = "txtCajas";
             this.txtCajas.Size = new System.Drawing.Size(53, 20);
-            this.txtCajas.TabIndex = 18;
+            this.txtCajas.TabIndex = 2;
             this.txtCajas.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtPrecioU
@@ -210,6 +212,7 @@ namespace Maint
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(13, 28);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 13);
@@ -218,29 +221,22 @@ namespace Maint
             // 
             // cmbProducto
             // 
+            this.cmbProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProducto.FormattingEnabled = true;
-            this.cmbProducto.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3"});
             this.cmbProducto.Location = new System.Drawing.Point(110, 25);
             this.cmbProducto.Name = "cmbProducto";
             this.cmbProducto.Size = new System.Drawing.Size(116, 21);
-            this.cmbProducto.TabIndex = 19;
-            this.cmbProducto.Text = "Eliga uno producto";
+            this.cmbProducto.TabIndex = 1;
             this.cmbProducto.SelectedIndexChanged += new System.EventHandler(this.cmbProducto_SelectedIndexChanged);
             // 
             // cmbMetodoPago
             // 
+            this.cmbMetodoPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMetodoPago.FormattingEnabled = true;
-            this.cmbMetodoPago.Items.AddRange(new object[] {
-            "1",
-            "2"});
             this.cmbMetodoPago.Location = new System.Drawing.Point(110, 163);
             this.cmbMetodoPago.Name = "cmbMetodoPago";
-            this.cmbMetodoPago.Size = new System.Drawing.Size(147, 21);
-            this.cmbMetodoPago.TabIndex = 21;
-            this.cmbMetodoPago.Text = "Eliga un metodo de pago";
+            this.cmbMetodoPago.Size = new System.Drawing.Size(163, 21);
+            this.cmbMetodoPago.TabIndex = 3;
             // 
             // label9
             // 
@@ -298,10 +294,10 @@ namespace Maint
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(271, 52);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(213, 29);
+            this.label11.Size = new System.Drawing.Size(231, 29);
             this.label11.TabIndex = 29;
             this.label11.Text = "Realize su pedido!";
             // 
@@ -388,7 +384,7 @@ namespace Maint
             this.btnPedido.Location = new System.Drawing.Point(376, 368);
             this.btnPedido.Name = "btnPedido";
             this.btnPedido.Size = new System.Drawing.Size(95, 29);
-            this.btnPedido.TabIndex = 31;
+            this.btnPedido.TabIndex = 5;
             this.btnPedido.Text = "Generar pedido";
             this.btnPedido.UseVisualStyleBackColor = false;
             this.btnPedido.Click += new System.EventHandler(this.btnPedido_Click);

@@ -62,20 +62,31 @@ namespace Capa_Datos
         //Carga de Productos
         public DataTable CargarProductosCMB()
         {
-            SqlCommand cmd = new SqlCommand("select id_producto, nombre, valor from B_productos", cn);
+            cn.Open();
+            SqlCommand cmd = new SqlCommand("select id_producto, nombre, estado, descripcion, fecha_vencimiento, valor from B_productos", cn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
+
+            DataRow fila = dt.NewRow();
+            fila["nombre"] = "Eliga un producto";
+            dt.Rows.InsertAt(fila, 0);
+            cn.Close();
             return dt;
         }
 
         //Carga de Metodo de pago
         public DataTable CargarMPagoCMB()
         {
+            cn.Open();
             SqlCommand cmd = new SqlCommand("select id_Mpago, nombre from B_MetodoPago", cn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
+            DataRow fila = dt.NewRow();
+            fila["nombre"] = "Eliga un metodo de pago";
+            dt.Rows.InsertAt(fila, 0);
+            cn.Close();
             return dt;
         }
 
@@ -109,7 +120,7 @@ namespace Capa_Datos
             return registros;
         }
 
-        //eliminar pedido
+        //Eliminar pedido
         public String Eliminar_pedido(int pedido)
         {
             String Rpa = "";

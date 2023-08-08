@@ -37,6 +37,7 @@ namespace Maint
             ActualizarTOTAL();
         }
 
+        //Carga del formulario segumiento en el panel del formulario principal
         private void btnSeguimiento_Click(object sender, EventArgs e)
         {
             // Crear una instancia de Formulario3
@@ -49,15 +50,13 @@ namespace Maint
                 pe.abriFormPanel(se);
             }
         }
+
         #region mis metodos
         void limpiar()
         {
-            cmbProducto.Text = "";
             txtCajas.Text = "";
+            txtDetalles.Text = "";
             txtPrecioU.Text = "";
-            txtPrecioT.Text = "";
-            txtDetalles.Text = "";
-            txtDetalles.Text = "";
         }
 
         void Mantenimiento(String accion)
@@ -77,30 +76,43 @@ namespace Maint
 
         private void ActualizarTOTAL()
         {
-            //float precioU = float.Parse(txtPrecioU.Text);
-            //int cajas = int.Parse(txtCajas.Text);
             if (float.TryParse(txtPrecioU.Text, out float precioU) && int.TryParse(txtCajas.Text, out int cajas))
             {
                 float preciototal = precioU * cajas;
                 txtPrecioT.Text = preciototal.ToString();
             }
-            else if(String.IsNullOrEmpty(txtCajas.Text))
+            else if (String.IsNullOrEmpty(txtCajas.Text))
             {
                 float preciototal = 0;
                 txtPrecioT.Text = preciototal.ToString();
             }
+            else if (char.IsDigit(Convert.ToChar(txtCajas.Text)) && cmbProducto.Text.Equals("Eliga un producto"))
+            {
+                txtCajas.Text = "";
+                MessageBox.Show("Selecione un producto!", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             else
             {
                 txtCajas.Text = "";
-                MessageBox.Show("Ingrese las cajas en numero!", "Aviso del sistem", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Ingrese las cajas en numero!", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void MensajeCamposEmpty()
+        {
+            MessageBox.Show("Rellene los campos para registrar el pedido!", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         #endregion 
 
         private void btnPedido_Click(object sender, EventArgs e)
         {
-            if (txtPedido.Text == "")
+            if (cmbMetodoPago.Text.Equals("Eliga un metodo de pago") || cmbProducto.Text.Equals("Eliga un producto") 
+                || (txtCajas.Text.Equals(""))) 
+            {
+                MensajeCamposEmpty();
+            }
+            else if (txtPedido.Text != "")
             {
                 if (MessageBox.Show("Deseas registrar el pedido?", "Mensaje",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
@@ -130,8 +142,20 @@ namespace Maint
                 DataRow select = (cmbProducto.SelectedItem as DataRowView)?.Row;
                 if (select != null)
                 {
-                    decimal valor = Convert.ToDecimal(select["valor"]);
-                    txtPrecioU.Text = valor.ToString();
+                    object val = select["valor"];
+                    if (!Convert.IsDBNull(val))
+                    {
+                        decimal valor = Convert.ToDecimal(select["valor"]);
+                        txtPrecioU.Text = valor.ToString();
+                        String Des = Convert.ToString(select["descripcion"]);
+                        String estado = Convert.ToString(select["estado"]);
+                        String total = "Descripcion: " + Des + " \n" + "\n Estado: " + estado;
+                        txtDetalles.Text = total;
+                    }
+                    else
+                    {
+                        limpiar();
+                    }
                 }
             }
         }
@@ -142,14 +166,15 @@ namespace Maint
             if (cmbProducto.SelectedItem != null)
             {
                 DataRow select = (cmbProducto.SelectedItem as DataRowView)?.Row;
-                if (select != null)
-                {
-                    id_producto = Convert.ToInt32(select["id_producto"]);
-                }
+               if (select != null)
+               {
+                   id_producto = Convert.ToInt32(select["id_producto"]);
+               }
             }
             return id_producto;
         }
 
+        //Cargar datos de Inicio de sesion en la entidad Usuario
         private void CargardatosInicioSesion()
         {
             List<E_usuario> registros = En.ObtenerRegistrosInicioSesion();
