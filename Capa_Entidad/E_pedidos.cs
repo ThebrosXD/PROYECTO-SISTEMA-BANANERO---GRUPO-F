@@ -16,5 +16,6 @@ namespace Capa_Entidad
         public String Estado { get; set; }
         public float PrecioUNI_pe { get; set; }
         public float PrecioTOT_pe { get; set; }
+        public String descripcion { get; set; }
     }
 }

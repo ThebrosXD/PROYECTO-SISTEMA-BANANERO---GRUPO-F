@@ -14,14 +14,14 @@ namespace Maint.Ventas
 {
     public partial class FormSeguimiento : Form
     {
-        E_pedidos EP = new E_pedidos();
-        N_pedidos EN = new N_pedidos();
+        E_pedidos Ep = new E_pedidos();
+        N_pedidos En = new N_pedidos();
         public FormSeguimiento()
         {
             InitializeComponent();
         }
+        
         #region "Mis metodos"
-
         private void Formato_pe()
         {
             dgvPrincipal.Columns[0].Width=50;
@@ -40,13 +40,14 @@ namespace Maint.Ventas
             dgvPrincipal.Columns[6].HeaderText = "Precio Unitario";
             dgvPrincipal.Columns[7].Width = 90;
             dgvPrincipal.Columns[7].HeaderText = "Precio Total";
+            dgvPrincipal.Columns[8].Width= 100;
+            dgvPrincipal.Columns[8].HeaderText = "Descripcion";
         }
 
         #endregion
-
         private void FormSeguimiento_Load(object sender, EventArgs e)
         {
-            dgvPrincipal.DataSource = EN.Listado_pe();
+            dgvPrincipal.DataSource = En.Listado_pe();
             this.Formato_pe();
         }
 
@@ -59,6 +60,31 @@ namespace Maint.Ventas
             if (pe != null)
             {
                 pe.abriFormPanel(FP);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(Convert.ToString(dgvPrincipal.CurrentRow.Cells["id_pedido"].Value)))
+            {
+                MessageBox.Show("No hay Informacion para eliminar");
+            }
+            else
+            {
+                DialogResult opcion;
+                opcion = MessageBox.Show("Desear eliminar el registro seleccionado?","Aviso del sistema",MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (opcion == DialogResult.Yes)
+                {
+                    string rpa = "";
+                    int id=0;
+                    id = Convert.ToInt32(dgvPrincipal.CurrentRow.Cells["id_pedido"].Value);
+                    rpa = En.Eliminar_pedido(id);
+                    if (rpa.Equals("OK"))
+                    {
+                        dgvPrincipal.DataSource = En.Listado_pe();
+                        MessageBox.Show("Registro eliminado del sistema","Aviso del sistema", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    }
+                }
             }
         }
     }

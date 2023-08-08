@@ -20,7 +20,7 @@ namespace Capa_Negocio
 
         public String Mantenimiento_pedido(String accion, E_pedidos oPE)
         {
-            return datosD.Mantenimiento_pedido(accion, oPE);
+            return datosD.Registrar_pedido(accion, oPE);
         }
 
         public DataTable CargarProductosCMB()
@@ -33,9 +33,14 @@ namespace Capa_Negocio
             return datosD.CargarMPagoCMB();
         }
 
-        public DataTable CargarUsuario()
+        public List<E_usuario> ObtenerRegistrosInicioSesion()
         {
-            return datosD.CargarUsuario();
+            return datosD.ObtenerRegistrosInicioSesion();
+        }
+
+        public String Eliminar_pedido(int codigo)
+        {
+            return datosD.Eliminar_pedido(codigo);
         }
     }
 }

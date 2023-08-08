@@ -21,7 +21,22 @@ namespace Maint
         public FormPedido()
         {
             InitializeComponent();
+            CargardatosInicioSesion();
+            txtCajas.TextChanged += TxtCajas_TextChanged;
+            txtPrecioT.TextChanged += TxtPrecioT_TextChanged;
+            dtpFechaActual.Value = DateTime.Now;
         }
+
+        private void TxtPrecioT_TextChanged(object sender, EventArgs e)
+        {
+            ActualizarTOTAL();
+        }
+
+        private void TxtCajas_TextChanged(object sender, EventArgs e)
+        {
+            ActualizarTOTAL();
+        }
+
         private void btnSeguimiento_Click(object sender, EventArgs e)
         {
             // Crear una instancia de Formulario3
@@ -34,13 +49,14 @@ namespace Maint
                 pe.abriFormPanel(se);
             }
         }
-
+        #region mis metodos
         void limpiar()
         {
             cmbProducto.Text = "";
             txtCajas.Text = "";
             txtPrecioU.Text = "";
             txtPrecioT.Text = "";
+            txtDetalles.Text = "";
             txtDetalles.Text = "";
         }
 
@@ -53,10 +69,34 @@ namespace Maint
             Ep.Fecha_pe = dtpFechaActual.Value;
             Ep.PrecioUNI_pe = float.Parse(txtPrecioU.Text);
             Ep.PrecioTOT_pe = float.Parse(txtPrecioT.Text);
+            Ep.descripcion = txtDetalles.Text;
             Ep.Estado = "PENDIENTE";
             String me = En.Mantenimiento_pedido(accion, Ep);
             MessageBox.Show(me, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void ActualizarTOTAL()
+        {
+            //float precioU = float.Parse(txtPrecioU.Text);
+            //int cajas = int.Parse(txtCajas.Text);
+            if (float.TryParse(txtPrecioU.Text, out float precioU) && int.TryParse(txtCajas.Text, out int cajas))
+            {
+                float preciototal = precioU * cajas;
+                txtPrecioT.Text = preciototal.ToString();
+            }
+            else if(String.IsNullOrEmpty(txtCajas.Text))
+            {
+                float preciototal = 0;
+                txtPrecioT.Text = preciototal.ToString();
+            }
+            else
+            {
+                txtCajas.Text = "";
+                MessageBox.Show("Ingrese las cajas en numero!", "Aviso del sistem", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        #endregion 
 
         private void btnPedido_Click(object sender, EventArgs e)
         {
@@ -66,7 +106,7 @@ namespace Maint
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
                 {
                     Mantenimiento("1");
-                    //limpiar();
+                    limpiar();
                 }
             }
         }
@@ -88,7 +128,7 @@ namespace Maint
             if (cmbProducto.SelectedItem != null)
             {
                 DataRow select = (cmbProducto.SelectedItem as DataRowView)?.Row;
-                if(select != null)
+                if (select != null)
                 {
                     decimal valor = Convert.ToDecimal(select["valor"]);
                     txtPrecioU.Text = valor.ToString();
@@ -108,6 +148,18 @@ namespace Maint
                 }
             }
             return id_producto;
+        }
+
+        private void CargardatosInicioSesion()
+        {
+            List<E_usuario> registros = En.ObtenerRegistrosInicioSesion();
+            foreach (E_usuario registro in registros)
+            {
+                txtCedula.Text = Convert.ToString(registro.cedula);
+                txtNombre.Text = registro.nombre;
+                txtTelefono.Text = Convert.ToString(registro.telefono);
+                txtDireccion.Text = registro.direccion;
+            }
         }
     }
 }

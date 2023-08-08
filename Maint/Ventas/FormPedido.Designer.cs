@@ -116,6 +116,7 @@ namespace Maint
             // 
             // txtPedido
             // 
+            this.txtPedido.Enabled = false;
             this.txtPedido.Location = new System.Drawing.Point(131, 19);
             this.txtPedido.Name = "txtPedido";
             this.txtPedido.ReadOnly = true;
@@ -124,24 +125,33 @@ namespace Maint
             // 
             // txtTelefono
             // 
+            this.txtTelefono.Enabled = false;
             this.txtTelefono.Location = new System.Drawing.Point(131, 163);
             this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.ReadOnly = true;
             this.txtTelefono.Size = new System.Drawing.Size(100, 20);
             this.txtTelefono.TabIndex = 8;
+            this.txtTelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtDireccion
             // 
+            this.txtDireccion.Enabled = false;
             this.txtDireccion.Location = new System.Drawing.Point(131, 124);
             this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.ReadOnly = true;
             this.txtDireccion.Size = new System.Drawing.Size(100, 20);
             this.txtDireccion.TabIndex = 9;
+            this.txtDireccion.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtNombre
             // 
+            this.txtNombre.Enabled = false;
             this.txtNombre.Location = new System.Drawing.Point(131, 91);
             this.txtNombre.Name = "txtNombre";
+            this.txtNombre.ReadOnly = true;
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 10;
+            this.txtNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtCajas
             // 
@@ -149,21 +159,26 @@ namespace Maint
             this.txtCajas.Name = "txtCajas";
             this.txtCajas.Size = new System.Drawing.Size(53, 20);
             this.txtCajas.TabIndex = 18;
+            this.txtCajas.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtPrecioU
             // 
             this.txtPrecioU.Enabled = false;
             this.txtPrecioU.Location = new System.Drawing.Point(110, 95);
             this.txtPrecioU.Name = "txtPrecioU";
+            this.txtPrecioU.ReadOnly = true;
             this.txtPrecioU.Size = new System.Drawing.Size(53, 20);
             this.txtPrecioU.TabIndex = 17;
+            this.txtPrecioU.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtPrecioT
             // 
+            this.txtPrecioT.Enabled = false;
             this.txtPrecioT.Location = new System.Drawing.Point(110, 129);
             this.txtPrecioT.Name = "txtPrecioT";
             this.txtPrecioT.Size = new System.Drawing.Size(53, 20);
             this.txtPrecioT.TabIndex = 16;
+            this.txtPrecioT.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label5
             // 
@@ -356,10 +371,13 @@ namespace Maint
             // 
             // txtCedula
             // 
+            this.txtCedula.Enabled = false;
             this.txtCedula.Location = new System.Drawing.Point(131, 53);
             this.txtCedula.Name = "txtCedula";
+            this.txtCedula.ReadOnly = true;
             this.txtCedula.Size = new System.Drawing.Size(100, 20);
             this.txtCedula.TabIndex = 12;
+            this.txtCedula.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btnPedido
             // 
