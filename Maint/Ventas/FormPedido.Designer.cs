@@ -52,7 +52,7 @@ namespace Maint
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtDetalles = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCotizaciones = new System.Windows.Forms.Button();
             this.btnSeguimiento = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -68,10 +68,11 @@ namespace Maint
             // btnRegistrarPedido
             // 
             this.btnRegistrarPedido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(121)))), ((int)(((byte)(248)))));
+            this.btnRegistrarPedido.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegistrarPedido.FlatAppearance.BorderSize = 0;
             this.btnRegistrarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrarPedido.ForeColor = System.Drawing.Color.White;
-            this.btnRegistrarPedido.Location = new System.Drawing.Point(20, 12);
+            this.btnRegistrarPedido.Location = new System.Drawing.Point(27, 12);
             this.btnRegistrarPedido.Name = "btnRegistrarPedido";
             this.btnRegistrarPedido.Size = new System.Drawing.Size(110, 23);
             this.btnRegistrarPedido.TabIndex = 2;
@@ -264,26 +265,29 @@ namespace Maint
             this.txtDetalles.Size = new System.Drawing.Size(195, 112);
             this.txtDetalles.TabIndex = 23;
             // 
-            // button2
+            // btnCotizaciones
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(121)))), ((int)(((byte)(248)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(147, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(110, 23);
-            this.button2.TabIndex = 27;
-            this.button2.Text = "Cotizaciones";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnCotizaciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(121)))), ((int)(((byte)(248)))));
+            this.btnCotizaciones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCotizaciones.FlatAppearance.BorderSize = 0;
+            this.btnCotizaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCotizaciones.ForeColor = System.Drawing.Color.White;
+            this.btnCotizaciones.Location = new System.Drawing.Point(154, 12);
+            this.btnCotizaciones.Name = "btnCotizaciones";
+            this.btnCotizaciones.Size = new System.Drawing.Size(110, 23);
+            this.btnCotizaciones.TabIndex = 27;
+            this.btnCotizaciones.Text = "Cotizaciones";
+            this.btnCotizaciones.UseVisualStyleBackColor = false;
+            this.btnCotizaciones.Click += new System.EventHandler(this.btnCotizaciones_Click);
             // 
             // btnSeguimiento
             // 
             this.btnSeguimiento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(121)))), ((int)(((byte)(248)))));
+            this.btnSeguimiento.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSeguimiento.FlatAppearance.BorderSize = 0;
             this.btnSeguimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeguimiento.ForeColor = System.Drawing.Color.White;
-            this.btnSeguimiento.Location = new System.Drawing.Point(276, 12);
+            this.btnSeguimiento.Location = new System.Drawing.Point(283, 12);
             this.btnSeguimiento.Name = "btnSeguimiento";
             this.btnSeguimiento.Size = new System.Drawing.Size(110, 23);
             this.btnSeguimiento.TabIndex = 28;
@@ -295,7 +299,7 @@ namespace Maint
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(271, 52);
+            this.label11.Location = new System.Drawing.Point(278, 52);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(231, 29);
             this.label11.TabIndex = 29;
@@ -317,7 +321,7 @@ namespace Maint
             this.groupBox1.Controls.Add(this.cmbMetodoPago);
             this.groupBox1.Controls.Add(this.cmbProducto);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Location = new System.Drawing.Point(266, 93);
+            this.groupBox1.Location = new System.Drawing.Point(273, 93);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(498, 245);
             this.groupBox1.TabIndex = 31;
@@ -350,7 +354,7 @@ namespace Maint
             this.groupBox2.Controls.Add(this.txtNombre);
             this.groupBox2.Controls.Add(this.txtTelefono);
             this.groupBox2.Controls.Add(this.txtDireccion);
-            this.groupBox2.Location = new System.Drawing.Point(12, 93);
+            this.groupBox2.Location = new System.Drawing.Point(19, 93);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(237, 198);
             this.groupBox2.TabIndex = 32;
@@ -381,7 +385,7 @@ namespace Maint
             this.btnPedido.FlatAppearance.BorderSize = 0;
             this.btnPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPedido.ForeColor = System.Drawing.Color.White;
-            this.btnPedido.Location = new System.Drawing.Point(376, 368);
+            this.btnPedido.Location = new System.Drawing.Point(383, 368);
             this.btnPedido.Name = "btnPedido";
             this.btnPedido.Size = new System.Drawing.Size(95, 29);
             this.btnPedido.TabIndex = 5;
@@ -401,7 +405,7 @@ namespace Maint
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.btnSeguimiento);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnCotizaciones);
             this.Controls.Add(this.btnRegistrarPedido);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -440,7 +444,7 @@ namespace Maint
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtDetalles;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCotizaciones;
         private System.Windows.Forms.Button btnSeguimiento;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox groupBox1;

@@ -82,6 +82,12 @@
     <Compile Include="Seguridad\FormCreacionCuenta.Designer.cs">
       <DependentUpon>FormCreacionCuenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventas\FormCotizaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\FormCotizaciones.Designer.cs">
+      <DependentUpon>FormCotizaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventas\FormSeguimiento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     </Compile>
     <EmbeddedResource Include="Seguridad\FormCreacionCuenta.resx">
       <DependentUpon>FormCreacionCuenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\FormCotizaciones.resx">
+      <DependentUpon>FormCotizaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas\FormSeguimiento.resx">
       <DependentUpon>FormSeguimiento.cs</DependentUpon>

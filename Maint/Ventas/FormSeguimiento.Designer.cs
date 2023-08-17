@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.button5 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCotizaciones = new System.Windows.Forms.Button();
             this.btnRegistrarPedido = new System.Windows.Forms.Button();
             this.dgvPrincipal = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
@@ -43,25 +43,26 @@
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(268, 12);
+            this.button5.Location = new System.Drawing.Point(283, 12);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(110, 23);
             this.button5.TabIndex = 33;
             this.button5.Text = "Seguimiento";
             this.button5.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnCotizaciones
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(121)))), ((int)(((byte)(248)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(139, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(110, 23);
-            this.button2.TabIndex = 32;
-            this.button2.Text = "Cotizaciones";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnCotizaciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(121)))), ((int)(((byte)(248)))));
+            this.btnCotizaciones.FlatAppearance.BorderSize = 0;
+            this.btnCotizaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCotizaciones.ForeColor = System.Drawing.Color.White;
+            this.btnCotizaciones.Location = new System.Drawing.Point(154, 12);
+            this.btnCotizaciones.Name = "btnCotizaciones";
+            this.btnCotizaciones.Size = new System.Drawing.Size(110, 23);
+            this.btnCotizaciones.TabIndex = 32;
+            this.btnCotizaciones.Text = "Cotizaciones";
+            this.btnCotizaciones.UseVisualStyleBackColor = false;
+            this.btnCotizaciones.Click += new System.EventHandler(this.btnCotizaciones_Click);
             // 
             // btnRegistrarPedido
             // 
@@ -69,7 +70,7 @@
             this.btnRegistrarPedido.FlatAppearance.BorderSize = 0;
             this.btnRegistrarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrarPedido.ForeColor = System.Drawing.Color.White;
-            this.btnRegistrarPedido.Location = new System.Drawing.Point(12, 12);
+            this.btnRegistrarPedido.Location = new System.Drawing.Point(27, 12);
             this.btnRegistrarPedido.Name = "btnRegistrarPedido";
             this.btnRegistrarPedido.Size = new System.Drawing.Size(110, 23);
             this.btnRegistrarPedido.TabIndex = 31;
@@ -87,7 +88,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(636, 79);
+            this.button1.Location = new System.Drawing.Point(12, 407);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 37;
@@ -115,7 +116,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvPrincipal);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnCotizaciones);
             this.Controls.Add(this.btnRegistrarPedido);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormSeguimiento";
@@ -129,7 +130,7 @@
 
         #endregion
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCotizaciones;
         private System.Windows.Forms.Button btnRegistrarPedido;
         private System.Windows.Forms.DataGridView dgvPrincipal;
         private System.Windows.Forms.Button button1;

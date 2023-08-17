@@ -186,5 +186,18 @@ namespace Maint
                 txtDireccion.Text = registro.direccion;
             }
         }
+
+        private void btnCotizaciones_Click(object sender, EventArgs e)
+        {
+            // Crear una instancia de Formulario3
+            FormCotizaciones CO = new FormCotizaciones();
+
+            // Llamar al método abriFormPanel de FormPrincipal para abrir FormSeguimiento dentro del panel
+            FormPrincipal pe = this.ParentForm as FormPrincipal;
+            if (pe != null)
+            {
+                pe.abriFormPanel(CO);
+            }
+        }
     }
 }
