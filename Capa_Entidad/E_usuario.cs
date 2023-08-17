@@ -12,5 +12,6 @@ namespace Capa_Entidad
         public String nombre { get; set; }
         public int telefono { get; set; }
         public String direccion { get; set; }
+        public int edad { get; set; }
     }
 }
