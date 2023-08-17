@@ -88,7 +88,7 @@ namespace Maint.Ventas
             }
             else if (txtCotizacion.Text != "")
             {
-                if (MessageBox.Show("Deseas enviar la cotizacion?", "Mensaje",
+                if (MessageBox.Show("¿Deseas enviar la cotizacion?", "Mensaje",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
                 {
                     Mantenimiento("1");
