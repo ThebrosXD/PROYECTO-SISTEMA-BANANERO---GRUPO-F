@@ -40,8 +40,12 @@
             this.button2 = new System.Windows.Forms.Button();
             this.pnTitulo = new System.Windows.Forms.Panel();
             this.pnContenedor = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dtpHora = new System.Windows.Forms.DateTimePicker();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.pnMenuPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnTitulo.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnMenuPrincipal
@@ -212,6 +216,9 @@
             // pnTitulo
             // 
             this.pnTitulo.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnTitulo.Controls.Add(this.dtpFecha);
+            this.pnTitulo.Controls.Add(this.dtpHora);
+            this.pnTitulo.Controls.Add(this.label1);
             this.pnTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTitulo.Location = new System.Drawing.Point(195, 0);
             this.pnTitulo.Name = "pnTitulo";
@@ -226,6 +233,35 @@
             this.pnContenedor.Name = "pnContenedor";
             this.pnContenedor.Size = new System.Drawing.Size(800, 451);
             this.pnContenedor.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Location = new System.Drawing.Point(29, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(222, 51);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Bienvenidos";
+            // 
+            // dtpHora
+            // 
+            this.dtpHora.Enabled = false;
+            this.dtpHora.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpHora.Location = new System.Drawing.Point(475, 32);
+            this.dtpHora.Name = "dtpHora";
+            this.dtpHora.Size = new System.Drawing.Size(83, 20);
+            this.dtpHora.TabIndex = 1;
+            this.dtpHora.Value = new System.DateTime(2023, 8, 18, 19, 29, 2, 0);
+            // 
+            // dtpFecha
+            // 
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha.Location = new System.Drawing.Point(344, 32);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(97, 20);
+            this.dtpFecha.TabIndex = 2;
             // 
             // FormPrincipal
             // 
@@ -242,6 +278,8 @@
             this.Text = "Menu Bananero";
             this.pnMenuPrincipal.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnTitulo.ResumeLayout(false);
+            this.pnTitulo.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -258,5 +296,8 @@
         private System.Windows.Forms.Button btnRegistros;
         private System.Windows.Forms.Button btnInformes;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
+        private System.Windows.Forms.DateTimePicker dtpHora;
+        private System.Windows.Forms.Label label1;
     }
 }

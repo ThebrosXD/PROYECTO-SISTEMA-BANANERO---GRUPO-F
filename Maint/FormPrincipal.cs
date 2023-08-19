@@ -18,6 +18,8 @@ namespace Maint
         public FormPrincipal()
         {
             InitializeComponent();
+            dtpHora.Value = DateTime.Now;
+            dtpFecha.Value = DateTime.Now;
         }
 
         //Abre un form hijo en un panel del form principal
