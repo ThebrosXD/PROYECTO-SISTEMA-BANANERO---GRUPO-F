@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="N_cotizaciones.cs" />
+    <Compile Include="N_inventario.cs" />
     <Compile Include="N_pedidos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -31,12 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.pnMenuPrincipal = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnInformes = new System.Windows.Forms.Button();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnRegistros = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnInventario = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.pnTitulo = new System.Windows.Forms.Panel();
             this.pnContenedor = new System.Windows.Forms.Panel();
@@ -48,12 +48,12 @@
             // 
             this.pnMenuPrincipal.BackColor = System.Drawing.Color.Aquamarine;
             this.pnMenuPrincipal.Controls.Add(this.pictureBox1);
-            this.pnMenuPrincipal.Controls.Add(this.button4);
-            this.pnMenuPrincipal.Controls.Add(this.button6);
+            this.pnMenuPrincipal.Controls.Add(this.btnInformes);
+            this.pnMenuPrincipal.Controls.Add(this.btnCerrarSesion);
             this.pnMenuPrincipal.Controls.Add(this.button3);
-            this.pnMenuPrincipal.Controls.Add(this.button5);
+            this.pnMenuPrincipal.Controls.Add(this.btnRegistros);
             this.pnMenuPrincipal.Controls.Add(this.btnVentas);
-            this.pnMenuPrincipal.Controls.Add(this.button1);
+            this.pnMenuPrincipal.Controls.Add(this.btnInventario);
             this.pnMenuPrincipal.Controls.Add(this.button2);
             this.pnMenuPrincipal.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnMenuPrincipal.Location = new System.Drawing.Point(0, 0);
@@ -70,42 +70,42 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
-            // button4
+            // btnInformes
             // 
-            this.button4.BackColor = System.Drawing.Color.Aquamarine;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button4.Image = global::Maint.Properties.Resources.reporte;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(0, 292);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(195, 39);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "INFORMES";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnInformes.BackColor = System.Drawing.Color.Aquamarine;
+            this.btnInformes.FlatAppearance.BorderSize = 0;
+            this.btnInformes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnInformes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInformes.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInformes.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnInformes.Image = global::Maint.Properties.Resources.reporte;
+            this.btnInformes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInformes.Location = new System.Drawing.Point(0, 292);
+            this.btnInformes.Name = "btnInformes";
+            this.btnInformes.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.btnInformes.Size = new System.Drawing.Size(195, 39);
+            this.btnInformes.TabIndex = 9;
+            this.btnInformes.Text = "INFORMES";
+            this.btnInformes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInformes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnInformes.UseVisualStyleBackColor = false;
             // 
-            // button6
+            // btnCerrarSesion
             // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button6.BackColor = System.Drawing.Color.Aquamarine;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(46, 494);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(105, 39);
-            this.button6.TabIndex = 8;
-            this.button6.Text = "Cerrar sesión";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btnCerrarSesion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCerrarSesion.BackColor = System.Drawing.Color.Aquamarine;
+            this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
+            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(46, 494);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(105, 39);
+            this.btnCerrarSesion.TabIndex = 8;
+            this.btnCerrarSesion.Text = "Cerrar sesión";
+            this.btnCerrarSesion.UseVisualStyleBackColor = false;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // button3
             // 
@@ -127,25 +127,25 @@
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // btnRegistros
             // 
-            this.button5.BackColor = System.Drawing.Color.Aquamarine;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button5.Image = global::Maint.Properties.Resources.registro;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(0, 337);
-            this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(195, 39);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "REGISTRO";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnRegistros.BackColor = System.Drawing.Color.Aquamarine;
+            this.btnRegistros.FlatAppearance.BorderSize = 0;
+            this.btnRegistros.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnRegistros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistros.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistros.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnRegistros.Image = global::Maint.Properties.Resources.registro;
+            this.btnRegistros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegistros.Location = new System.Drawing.Point(0, 337);
+            this.btnRegistros.Name = "btnRegistros";
+            this.btnRegistros.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.btnRegistros.Size = new System.Drawing.Size(195, 39);
+            this.btnRegistros.TabIndex = 7;
+            this.btnRegistros.Text = "REGISTRO";
+            this.btnRegistros.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegistros.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRegistros.UseVisualStyleBackColor = false;
             // 
             // btnVentas
             // 
@@ -166,27 +166,28 @@
             this.btnVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnVentas.UseVisualStyleBackColor = false;
-            this.btnVentas.Click += new System.EventHandler(this.button4_Click);
+            this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
             // 
-            // button1
+            // btnInventario
             // 
-            this.button1.BackColor = System.Drawing.Color.Aquamarine;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button1.Image = global::Maint.Properties.Resources.listas_de_control;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 202);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(195, 39);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "INVENTARIO";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnInventario.BackColor = System.Drawing.Color.Aquamarine;
+            this.btnInventario.FlatAppearance.BorderSize = 0;
+            this.btnInventario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInventario.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInventario.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnInventario.Image = global::Maint.Properties.Resources.listas_de_control;
+            this.btnInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInventario.Location = new System.Drawing.Point(0, 202);
+            this.btnInventario.Name = "btnInventario";
+            this.btnInventario.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.btnInventario.Size = new System.Drawing.Size(195, 39);
+            this.btnInventario.TabIndex = 5;
+            this.btnInventario.Text = "INVENTARIO";
+            this.btnInventario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInventario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnInventario.UseVisualStyleBackColor = false;
+            this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
             // 
             // button2
             // 
@@ -251,11 +252,11 @@
         private System.Windows.Forms.Panel pnTitulo;
         private System.Windows.Forms.Panel pnContenedor;
         private System.Windows.Forms.Button btnVentas;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnInventario;
+        private System.Windows.Forms.Button btnCerrarSesion;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnRegistros;
+        private System.Windows.Forms.Button btnInformes;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

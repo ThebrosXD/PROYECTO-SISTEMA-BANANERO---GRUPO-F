@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="E_cotizaciones.cs" />
     <Compile Include="E_pedidos.cs" />
+    <Compile Include="E_productos.cs" />
     <Compile Include="E_usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

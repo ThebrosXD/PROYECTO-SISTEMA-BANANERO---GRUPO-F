@@ -1,4 +1,5 @@
 ﻿using Maint.Ventas;
+using Maint.Inventario;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,7 +20,6 @@ namespace Maint
             InitializeComponent();
         }
 
-
         //Abre un form hijo en un panel del form principal
         public void abriFormPanel(object Formhijo)
         {
@@ -33,18 +33,6 @@ namespace Maint
             fh.Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            abriFormPanel(new FormPedido());
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            FormLogin lgn = new FormLogin();
-            this.Close();
-            lgn.Show();
-        }
-
         public void abrirFormSeguimiento()
         {
             FormSeguimiento se = new FormSeguimiento();
@@ -54,6 +42,24 @@ namespace Maint
             pnContenedor.Controls.Clear();
             pnContenedor.Controls.Add(se);
             se.Show();
+        }
+
+        //Cierra sesion del usuario logeado
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            FormLogin lgn = new FormLogin();
+            this.Close();
+            lgn.Show();
+        }
+
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            abriFormPanel(new FormPedido());
+        }
+
+        private void btnInventario_Click(object sender, EventArgs e)
+        {
+            abriFormPanel(new FormInventario());
         }
     }
 }
