@@ -106,5 +106,9 @@ namespace Maint.Ventas
             MessageBox.Show("Registro eliminado del sistema"+Ep.ToString(), "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Informacion();
+        }
     }
 }
