@@ -100,5 +100,10 @@ namespace Maint.Ventas
                 pe.abriFormPanel(CO);
             }
         }
+
+        private void Informacion()
+        {
+            MessageBox.Show("Registro eliminado del sistema"+Ep.ToString(), "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }
