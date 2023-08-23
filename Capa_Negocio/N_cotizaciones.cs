@@ -1,4 +1,11 @@
-﻿using System;
+﻿/**
+ * Este es la clase capa negocio de cotizaciones
+ * @author Grupo F
+ * @version   1.1
+ * @return El mensaje usado para el saludo
+ * Created on July 5, 2023, 4:24 AM
+*/
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -9,8 +16,12 @@ using Capa_Entidad;
 
 namespace Capa_Negocio
 {
+    /// <summary>
+    /// Clase que encapsula la lógica de negocio relacionada con las cotizaciones.
+    /// </summary>
     public class N_cotizaciones
     {
+
         D_cotizaciones datosC= new D_cotizaciones();
 
         public DataTable listado_co()
@@ -32,9 +43,9 @@ namespace Capa_Negocio
             return datosC.CargarProductosCMB();
         }
 
-        public List<E_usuario> ObtenerRegistrosInicioSesion()
+        public List<E_usuario> ObtenerRegistrosInicioSesion(int usuario)
         {
-            return datosC.ObtenerRegistrosInicioSesion();
+            return datosC.ObtenerRegistrosInicioSesion(usuario);
         }
     }
 }

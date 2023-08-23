@@ -1,4 +1,11 @@
-﻿using System;
+﻿/**
+ * Este es la clase capa datos de cotizaciones
+ * @author Grupo F
+ * @version   1.1
+ * @return El mensaje usado para el saludo
+ * Created on July 5, 2023, 4:24 AM
+*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,9 +17,16 @@ using System.Data;
 
 namespace Capa_Datos
 {
+    /// <summary>
+    /// Clase que proporciona el acceso a datos relacionados con las cotizaciones.
+    /// </summary>
     public class D_cotizaciones
     {
         SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["sql"].ConnectionString);
+        /// <summary>
+        /// Obtiene un listado de cotizaciones.
+        /// </summary>
+        /// <returns>Un objeto DataTable con los datos de las cotizaciones.</returns>
 
         public DataTable Listado_CO()
         {
@@ -24,6 +38,11 @@ namespace Capa_Datos
             return dt;
         }
 
+
+        /// <summary>
+        /// Carga los productos disponibles en un ComboBox para su selección en una cotización.
+        /// </summary>
+        /// <returns>Un objeto DataTable con los datos de los productos para el ComboBox.</returns>
         public DataTable CargarProductosCMB_CO()
         {
             cn.Open();
@@ -39,6 +58,12 @@ namespace Capa_Datos
             return dt;
         }
 
+        /// <summary>
+        /// Registra una nueva cotización en la base de datos.
+        /// </summary>
+        /// <param name="accion">La acción a realizar (insertar, actualizar).</param>
+        /// <param name="oCO">La entidad E_cotizaciones con los datos de la cotización.</param>
+        /// <returns>Un mensaje indicando el resultado del registro.</returns>
         public String Registrar_cotizacion(String accion, E_cotizaciones oCO)
         {
             String Rpa = "";
@@ -74,6 +99,10 @@ namespace Capa_Datos
             return Rpa;
         }
 
+        /// <summary>
+        /// Carga los productos disponibles en un ComboBox para su selección en diferentes operaciones.
+        /// </summary>
+        /// <returns>Un objeto DataTable con los datos de los productos para el ComboBox.</returns>
         public DataTable CargarProductosCMB()
         {
             cn.Open();
@@ -88,15 +117,21 @@ namespace Capa_Datos
             cn.Close();
             return dt;
         }
-        public List<E_usuario> ObtenerRegistrosInicioSesion()
+
+        /// <summary>
+        /// Obtiene registros de usuarios que han iniciado sesión en la aplicación.
+        /// </summary>
+        /// <returns>Una lista de entidades E_usuario con los datos de los usuarios.</returns>
+        public List<E_usuario> ObtenerRegistrosInicioSesion(int usuario)
         {
             List<E_usuario> registros = new List<E_usuario>();
 
             using (SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["sql"].ConnectionString))
             {
                 cn.Open();
-                using (SqlCommand command = new SqlCommand("select cedula, nombre, telefono, direccion from B_usuario", cn))
+                using (SqlCommand command = new SqlCommand("select cedula, nombre, telefono, direccion from B_usuario where cedula=@cedula", cn))
                 {
+                    command.Parameters.AddWithValue("@cedula", usuario);
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())

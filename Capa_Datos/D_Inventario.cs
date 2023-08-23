@@ -1,4 +1,11 @@
-﻿using System;
+﻿/**
+ * Este es la clase capa datos de inventario    
+ * @author Grupo F
+ * @version   1.1
+ * @return El mensaje usado para el saludo
+ * Created on July 5, 2023, 4:24 AM
+*/
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data;
@@ -13,6 +20,9 @@ namespace Capa_Datos
     public class D_Inventario
     {
         SqlConnection cn = new SqlConnection("Server=DESKTOP-R2245IH;Database=DBBanano;Integrated Security=true");
+        /// <summary>
+        /// Clase que proporciona el acceso a datos relacionados con el inventario de productos.
+        /// </summary>
 
         public DataTable Listado_inventario()
         {
@@ -23,6 +33,10 @@ namespace Capa_Datos
             return dt;
         }
 
+        /// <summary>
+        /// Registra un nuevo producto en el inventario.
+        /// </summary>
+        /// <param name="EP">La entidad E_productos con los datos del producto a registrar.</param>}
         public String Registrar_Inventario(E_productos EP)
         {
             String rpa = "";
@@ -59,6 +73,11 @@ namespace Capa_Datos
             return rpa;
         }
 
+        /// <summary>
+        /// Modifica los datos de un producto en el inventario.
+        /// </summary>
+        /// <param name="EP">La entidad E_productos con los nuevos datos del producto.</param>
+        /// <returns>Un mensaje indicando el resultado de la modificación.</returns>
         public String Modificar_Inventario(E_productos EP)
         {
             String rpa = "";
@@ -96,6 +115,11 @@ namespace Capa_Datos
             return rpa;
         }
 
+        /// <summary>
+        /// Elimina un producto del inventario.
+        /// </summary>
+        /// <param name="EP">La entidad E_productos con el ID del producto a eliminar.</param>
+        /// <returns>Un mensaje indicando el resultado de la eliminación.</returns>
         public String Eliminar_inventario(E_productos EP)
         {
             String rpa = "";
@@ -110,7 +134,7 @@ namespace Capa_Datos
             }
             catch (Exception ex)
             {
-                rpa= "Existen datos con ese producto, no se puede eliminar!";
+                rpa= ex.Message;
             }
             finally
             {

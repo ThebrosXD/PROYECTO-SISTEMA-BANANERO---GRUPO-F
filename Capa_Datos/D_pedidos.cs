@@ -1,4 +1,11 @@
-﻿using System;
+﻿/**
+ * Este es la clase capa datos de pedido
+ * @author Grupo F
+ * @version   1.1
+ * @return El mensaje usado para el saludo
+ * Created on July 5, 2023, 4:24 AM
+*/
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -8,6 +15,8 @@ using System.Data.SqlClient;
 using Capa_Entidad;
 using System.Configuration;
 using System.Collections;
+using System.Data.Common;
+using System.Runtime.InteropServices;
 
 namespace Capa_Datos
 {
@@ -15,14 +24,14 @@ namespace Capa_Datos
     {
         SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["sql"].ConnectionString);
 
-        public DataTable Listado_pe()
+        /**public DataTable Listado_pe()
         {
             SqlCommand cmd = new SqlCommand("listado_pedido", cn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
             return dt;
-        }
+        }*/
 
         //Registrar pedido
         public String Registrar_pedido(String accion, E_pedidos oPE)
@@ -39,7 +48,7 @@ namespace Capa_Datos
                 cmd.Parameters.AddWithValue("@estado", oPE.Estado);
                 cmd.Parameters.AddWithValue("@precioUni", oPE.PrecioUNI_pe);
                 cmd.Parameters.AddWithValue("@precioTotal", oPE.PrecioTOT_pe);
-                cmd.Parameters.AddWithValue("@descripcion",oPE.descripcion);
+                cmd.Parameters.AddWithValue("@descripcion", oPE.descripcion);
                 cmd.Parameters.Add("@accion", SqlDbType.VarChar, 100).Value = accion;
                 cmd.Parameters["@accion"].Direction = ParameterDirection.InputOutput;
                 cn.Open();
@@ -91,15 +100,16 @@ namespace Capa_Datos
         }
 
         //Obetener informacion del usuario logeado
-        public List<E_usuario> ObtenerRegistrosInicioSesion()
+        public List<E_usuario> ObtenerRegistrosInicioSesion(int cedula)
         {
             List<E_usuario> registros = new List<E_usuario>();
 
             using (SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["sql"].ConnectionString))
             {
                 cn.Open();
-                using (SqlCommand command = new SqlCommand("select cedula, nombre, telefono, direccion from B_usuario", cn))
+                using (SqlCommand command = new SqlCommand("select cedula, nombre, telefono, direccion, rol from B_usuario where cedula=@cedula", cn))
                 {
+                    command.Parameters.AddWithValue("@cedula", cedula);
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
@@ -110,11 +120,13 @@ namespace Capa_Datos
                                 nombre = reader["nombre"].ToString(),
                                 telefono = Convert.ToInt32(reader["telefono"]),
                                 direccion = reader["direccion"].ToString(),
+                                rol = reader["rol"].ToString(),
                             };
                             registros.Add(registro);
                         }
                     }
                 }
+                cn.Close();
             }
 
             return registros;
@@ -129,6 +141,90 @@ namespace Capa_Datos
                 SqlCommand cmd = new SqlCommand("Eliminar_pedido", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@nid_pedido", pedido);
+                cn.Open();
+
+                Rpa = cmd.ExecuteNonQuery() == 1 ? "OK" : "Nose pudo eliminar los datos";
+            }
+            catch (Exception ex)
+            {
+                Rpa = ex.Message;
+            }
+            finally
+            {
+                if (cn.State == ConnectionState.Open) cn.Close();
+            }
+            return Rpa;
+        }
+
+        //Mostrar tabla pedido
+        public DataTable Tablas_seguimiento(int USER)
+        {
+            cn.Open();
+            String consulta = "SELECT B_pedidos.id_pedido, B_pedidos.Mpago, B_pedidos.fecha_pedido, B_pedidos.precioTotal from B_pedidos where B_pedidos.id_cedula = @Id_cedula";
+            SqlCommand comando = new SqlCommand(consulta, cn);
+            comando.Parameters.AddWithValue("@Id_cedula", USER);
+            SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+            //comando.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            adaptador.Fill(dt);
+            cn.Close();
+            return dt;
+        }
+
+        //Buscar pedido
+        public DataTable BuscarPedido(int codigo)
+        {
+            cn.Open();
+            String consulta = "SELECT B_pedidos.id_pedido, B_pedidos.Mpago, B_pedidos.fecha_pedido, B_pedidos.precioTotal from B_pedidos where B_pedidos.id_pedido = @Id_pedido";
+            SqlCommand comando = new SqlCommand(consulta, cn);
+            comando.Parameters.AddWithValue("@Id_pedido", codigo);
+            SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+            //comando.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            adaptador.Fill(dt);
+            cn.Close() ;
+            return dt;
+        }
+
+        //Mostrar tabla cotizacion
+        public DataTable Tablas_seguimientoCoti(int USER)
+        {
+            cn.Open();
+            String consulta = "SELECT COTI.id_cotizacion, COTI.estado, COTI.fecha_cotizacion, COTI.fecha_aceptacion, COTI.precioTotal from B_cotizaciones as COTI where COTI.id_Cedula = @Id_cedula";
+            SqlCommand comando = new SqlCommand(consulta, cn);
+            comando.Parameters.AddWithValue("@Id_cedula", USER);
+            SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+            //comando.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            adaptador.Fill(dt);
+            cn.Close();
+            return dt;
+        }
+
+        //buscar cotizacion
+        public DataTable BuscarCotizacion(int codigo)
+        {
+            cn.Open();
+            String consulta = "SELECT COTI.id_cotizacion, COTI.estado, COTI.fecha_cotizacion, COTI.fecha_aceptacion, COTI.precioTotal from B_cotizaciones as COTI where COTI.id_cotizacion = @Id_cotizacion";
+            SqlCommand comando = new SqlCommand(consulta, cn);
+            comando.Parameters.AddWithValue("@Id_cotizacion", codigo);
+            SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+            //comando.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            adaptador.Fill(dt);
+            cn.Close();
+            return dt;
+        }
+
+        //Eliminar totizacion
+        public String Eliminar_cotizacion(int codigo)
+        {
+            String Rpa = "";
+            try
+            {
+                SqlCommand cmd = new SqlCommand("Eliminar_cotizacion", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@nid_cotizacion", codigo);
                 cn.Open();
 
                 Rpa = cmd.ExecuteNonQuery() == 1 ? "OK" : "Nose pudo eliminar los datos";

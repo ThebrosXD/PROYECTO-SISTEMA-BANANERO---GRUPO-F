@@ -43,8 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="D_cotizaciones.cs" />
+    <Compile Include="D_creacioncuenta.cs" />
     <Compile Include="D_Inventario.cs" />
     <Compile Include="D_pedidos.cs" />
+    <Compile Include="D_principal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

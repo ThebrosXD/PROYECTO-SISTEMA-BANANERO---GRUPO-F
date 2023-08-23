@@ -1,4 +1,11 @@
-﻿using Maint.Ventas;
+﻿/**
+ * Este es el formulario pedido, de donde estan todos los metodos y funciones 
+ * @author Grupo F
+ * @version   1.1
+ * @return El mensaje usado para el saludo
+ * Created on July 5, 2023, 4:24 AM
+*/
+using Maint.Ventas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -177,13 +184,15 @@ namespace Maint
         //Cargar datos de Inicio de sesion en la entidad Usuario
         private void CargardatosInicioSesion()
         {
-            List<E_usuario> registros = En.ObtenerRegistrosInicioSesion();
+            int usuario = E_Usuarioactual.UsuarioLogeado;
+            List<E_usuario> registros = En.ObtenerRegistrosInicioSesion(usuario);
             foreach (E_usuario registro in registros)
             {
                 txtCedula.Text = Convert.ToString(registro.cedula);
                 txtNombre.Text = registro.nombre;
                 txtTelefono.Text = Convert.ToString(registro.telefono);
                 txtDireccion.Text = registro.direccion;
+
             }
         }
 

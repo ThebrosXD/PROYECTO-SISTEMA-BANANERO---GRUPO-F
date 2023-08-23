@@ -1,4 +1,11 @@
-﻿using System;
+﻿/**
+ * Este es el formulario ventas de cotizaciones, 
+ * @author Grupo F
+ * @version   1.1
+ * @return El mensaje usado para el saludo
+ * Created on July 5, 2023, 4:24 AM
+*/
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,23 +14,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Capa_Entidad;
-using Capa_Negocio;
+using Capa_Entidad; // Importa el espacio de nombres Capa_Entidad
+using Capa_Negocio; // Importa el espacio de nombres Capa_Negocio
 
 namespace Maint.Ventas
 {
     public partial class FormCotizaciones : Form
     {
-        E_cotizaciones EC = new E_cotizaciones();
-        N_cotizaciones NC= new N_cotizaciones();
+        E_cotizaciones EC = new E_cotizaciones();  // Crea una instancia de la entidad E_cotizaciones
+        N_cotizaciones NC = new N_cotizaciones();  // Crea una instancia de la capa de negocio N_cotizaciones
 
         public FormCotizaciones()
         {
             InitializeComponent();
-            CargardatosInicioSesion();
-            txtPrecioT.TextChanged += txtPrecioT_TextChanged;
-            txtCajas.TextChanged += txtCajas_TextChanged;
-            dtpFechaActual.Value = DateTime.Now;
+            CargardatosInicioSesion(); // Carga los datos de inicio de sesión
+            txtPrecioT.TextChanged += txtPrecioT_TextChanged; // Asigna un evento al cambio en el campo de precio total
+            txtCajas.TextChanged += txtCajas_TextChanged; // Asigna un evento al cambio en el campo de cajas
+            dtpFechaActual.Value = DateTime.Now; // Establece la fecha actual en el DateTimePicker
         }
         #region mis metodos
         void limpiar()
@@ -54,6 +61,7 @@ namespace Maint.Ventas
         }
         #endregion
 
+        // Maneja el evento de clic en el botón "Registrar Pedido"
         private void btnRegistrarPedido_Click(object sender, EventArgs e)
         {
             // Crear una instancia de Formulario3
@@ -67,6 +75,7 @@ namespace Maint.Ventas
             }
         }
 
+        // Maneja el evento de clic en el botón "Seguimiento"
         private void btnSeguimiento_Click(object sender, EventArgs e)
         {
             // Crear una instancia de Formulario3
@@ -80,6 +89,7 @@ namespace Maint.Ventas
             }
         }
 
+        // Maneja el evento de clic en el botón "Cotización"
         private void btnCotizacion_Click(object sender, EventArgs e)
         {
             if (cmbProducto.Text.Equals("Eliga un producto") || (txtCajas.Text.Equals("")))
@@ -97,6 +107,7 @@ namespace Maint.Ventas
             }
         }
 
+        // Obtiene el ID del producto seleccionado
         public int idMetodoProducto()
         {
             int id_producto = 0;
@@ -111,13 +122,15 @@ namespace Maint.Ventas
             return id_producto;
         }
 
+        // Maneja el evento Load del formulario de cotizaciones
         private void FormCotizaciones_Load(object sender, EventArgs e)
         {
-            cmbProducto.DataSource = NC.CargarProductosCMB();
+            cmbProducto.DataSource = NC.CargarProductosCMB(); // Carga datos en el ComboBox de productos
             cmbProducto.DisplayMember = "nombre";
             cmbProducto.ValueMember = "id_producto";
         }
 
+        // Maneja el evento de cambio en la selección del ComboBox de productos
         private void cmbProducto_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbProducto.SelectedItem != null)
@@ -143,6 +156,8 @@ namespace Maint.Ventas
                 }
             }
         }
+
+        // Actualiza el campo de precio total al cambiar el precio unitario o la cantidad de cajas
         private void ActualizarTOTAL()
         {
             if (float.TryParse(txtPrecioU.Text, out float precioU) && int.TryParse(txtCajas.Text, out int cajas))
@@ -167,19 +182,23 @@ namespace Maint.Ventas
             }
         }
 
+        // Maneja el evento de cambio en el campo de precio total
         private void txtPrecioT_TextChanged(object sender, EventArgs e)
         {
             ActualizarTOTAL();
         }
 
+        // Maneja el evento de cambio en el campo de cajas
         private void txtCajas_TextChanged(object sender, EventArgs e)
         {
             ActualizarTOTAL();
         }
 
+        // Carga los datos de inicio de sesión en los campos correspondientes
         private void CargardatosInicioSesion()
         {
-            List<E_usuario> registros = NC.ObtenerRegistrosInicioSesion();
+            int usuario = E_Usuarioactual.UsuarioLogeado;
+            List<E_usuario> registros = NC.ObtenerRegistrosInicioSesion(usuario);
             foreach (E_usuario registro in registros)
             {
                 txtCedula.Text = Convert.ToString(registro.cedula);

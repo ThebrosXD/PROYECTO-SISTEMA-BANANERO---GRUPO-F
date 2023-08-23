@@ -39,10 +39,10 @@
             this.btnInventario = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.pnTitulo = new System.Windows.Forms.Panel();
-            this.pnContenedor = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dtpHora = new System.Windows.Forms.DateTimePicker();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.dtpHora = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pnContenedor = new System.Windows.Forms.Panel();
             this.pnMenuPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnTitulo.SuspendLayout();
@@ -225,14 +225,24 @@
             this.pnTitulo.Size = new System.Drawing.Size(800, 82);
             this.pnTitulo.TabIndex = 6;
             // 
-            // pnContenedor
+            // dtpFecha
             // 
-            this.pnContenedor.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pnContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnContenedor.Location = new System.Drawing.Point(195, 82);
-            this.pnContenedor.Name = "pnContenedor";
-            this.pnContenedor.Size = new System.Drawing.Size(800, 451);
-            this.pnContenedor.TabIndex = 7;
+            this.dtpFecha.Enabled = false;
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha.Location = new System.Drawing.Point(344, 32);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(97, 20);
+            this.dtpFecha.TabIndex = 2;
+            // 
+            // dtpHora
+            // 
+            this.dtpHora.Enabled = false;
+            this.dtpHora.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpHora.Location = new System.Drawing.Point(475, 32);
+            this.dtpHora.Name = "dtpHora";
+            this.dtpHora.Size = new System.Drawing.Size(83, 20);
+            this.dtpHora.TabIndex = 1;
+            this.dtpHora.Value = new System.DateTime(2023, 8, 18, 19, 29, 2, 0);
             // 
             // label1
             // 
@@ -245,23 +255,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Bienvenidos";
             // 
-            // dtpHora
+            // pnContenedor
             // 
-            this.dtpHora.Enabled = false;
-            this.dtpHora.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpHora.Location = new System.Drawing.Point(475, 32);
-            this.dtpHora.Name = "dtpHora";
-            this.dtpHora.Size = new System.Drawing.Size(83, 20);
-            this.dtpHora.TabIndex = 1;
-            this.dtpHora.Value = new System.DateTime(2023, 8, 18, 19, 29, 2, 0);
-            // 
-            // dtpFecha
-            // 
-            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(344, 32);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(97, 20);
-            this.dtpFecha.TabIndex = 2;
+            this.pnContenedor.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnContenedor.Location = new System.Drawing.Point(195, 82);
+            this.pnContenedor.Name = "pnContenedor";
+            this.pnContenedor.Size = new System.Drawing.Size(800, 451);
+            this.pnContenedor.TabIndex = 7;
             // 
             // FormPrincipal
             // 
